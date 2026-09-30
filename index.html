@@ -10,7 +10,7 @@
 <meta property="og:image" content="assets/photos/campus.jpg">
 <meta name="theme-color" content="#600911">
 <link rel="icon" type="image/png" href="assets/ngu-seal.png">
-<style>html{scroll-behavior:auto}img{max-width:100%}[hidden]{display:none!important}body{margin:0}</style>
+<style>img{max-width:100%}[hidden]{display:none!important}body{margin:0}</style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap">
@@ -421,7 +421,7 @@ footer .bottom nav{display:flex;gap:18px;flex-wrap:wrap}
   <div class="phead"><div class="wrap">
     <div><nav class="crumb"><a href="#home">Home</a><span>/</span><span>About Us</span></nav><span class="eyebrow">About Us</span><h1>About New Generation University</h1><p class="lead">A Center of Excellence in Higher Education, serving the younger generation of Somaliland and beyond since 2010.</p>
       <div class="subnav"><a href="#about-ngu">About NGU</a><a href="#about-history">History</a><a href="#about-vision">Vision &amp; Mission</a><a href="#about-values">Core Values</a><a href="#about-leadership">Leadership</a><a href="#about-objectives">Objectives</a></div></div>
-    <figure class="pic" data-scene="campus" data-photo="campus" style="margin:0"></figure>
+    <figure class="pic" data-scene="campus" data-photo="campus2" style="margin:0"></figure>
   </div></div>
   <section id="about-ngu"><div class="wrap two">
     <div class="prose"><span class="eyebrow">About NGU</span><h2 style="font-size:clamp(1.65rem,3.1vw,2.3rem)">A Center of Excellence in Higher Education</h2>
@@ -632,13 +632,13 @@ footer .bottom nav{display:flex;gap:18px;flex-wrap:wrap}
       <div><h5>Academic</h5><ul><li><a href="#academic-undergraduate">Undergraduate Programs</a></li><li><a href="#academic-masters">Master's Programs</a></li><li><a href="#academic-faculties">Faculties</a></li><li><a href="#academic-calendar">Academic Calendar</a></li></ul><h5 style="margin-top:24px">Centres</h5><ul><li><a href="#centres-research">Research Centre</a></li><li><a href="#centres-innovation">Innovation Centre</a></li><li><a href="#centres-language">Language Centre</a></li><li><a href="#centres-training">Training Centre</a></li><li><a href="#centres-community">Community Service Centre</a></li></ul></div>
       <div><h5>Research</h5><ul><li><a href="#research-areas">Research Areas</a></li><li><a href="#research-publications">Publications</a></li><li><a href="#research-projects">Research Projects</a></li><li><a href="#research-conferences">Conferences &amp; Seminars</a></li></ul><h5 style="margin-top:24px">Contact</h5><ul><li><a href="#contact">Contact Us</a></li><li><a href="#contact">Get Directions</a></li></ul></div>
     </div>
-    <div class="bottom"><span>© 2026 New Generation University. All Rights Reserved. · Photos: NGU Facebook page and Unsplash contributors</span><nav><a href="#home">Privacy Policy</a><a href="#home">Terms &amp; Conditions</a><a href="#home">Accessibility</a></nav></div>
+    <div class="bottom"><span>© 2026 New Generation University. All Rights Reserved. · Photos: NGU and Unsplash contributors</span><nav><a href="#home">Privacy Policy</a><a href="#home">Terms &amp; Conditions</a><a href="#home">Accessibility</a></nav></div>
   </div>
 </footer>
 
 <script>
 /* ---------- Real photos: put data: URIs here to replace an illustration (key = data-photo) ---------- */
-const PHOTOS = {"grads": "assets/photos/grads.jpg", "hero": "assets/photos/hero.jpg", "campus": "assets/photos/campus.jpg", "lecture": "assets/photos/lecture.jpg", "research": "assets/photos/research.jpg", "friends": "assets/photos/friends.jpg", "career": "assets/photos/career.jpg", "training": "assets/photos/training.jpg", "computers": "assets/photos/computers.jpg", "handshake": "assets/photos/handshake.jpg", "meeting": "assets/photos/meeting.jpg", "library": "assets/photos/library.jpg", "lab": "assets/photos/lab.jpg", "innovation": "assets/photos/innovation.jpg", "leaders": "assets/photos/leaders.jpg", "welcome": "assets/photos/welcome.jpg", "documents": "assets/photos/documents.jpg", "conference": "assets/photos/conference.jpg", "helpdesk": "assets/photos/helpdesk.jpg", "chat": "assets/photos/chat.jpg", "community": "assets/photos/community.jpg"};
+const PHOTOS = {"grads": "assets/photos/grads.jpg", "hero": "assets/photos/hero.jpg", "campus": "assets/photos/campus.jpg", "campus2": "assets/photos/campus2.jpg", "lecture": "assets/photos/lecture.jpg", "research": "assets/photos/research.jpg", "friends": "assets/photos/friends.jpg", "career": "assets/photos/career.jpg", "training": "assets/photos/training.jpg", "computers": "assets/photos/computers.jpg", "handshake": "assets/photos/handshake.jpg", "meeting": "assets/photos/meeting.jpg", "library": "assets/photos/library.jpg", "lab": "assets/photos/lab.jpg", "innovation": "assets/photos/innovation.jpg", "leaders": "assets/photos/leaders.jpg", "welcome": "assets/photos/welcome.jpg", "documents": "assets/photos/documents.jpg", "conference": "assets/photos/conference.jpg", "helpdesk": "assets/photos/helpdesk.jpg", "chat": "assets/photos/chat.jpg", "community": "assets/photos/community.jpg"};
 
 /* ---------- Illustration kit (flat, warm, people-first) ---------- */
 const V=n=>`var(--${n})`;
@@ -790,7 +790,7 @@ const FEAT={
 };
 const LABEL={partnerships:'Partnerships',facilities:'Facilities',centres:'Centres'};
 document.querySelectorAll('[data-features]').forEach(w=>{const p=w.dataset.features;
-  w.innerHTML=FEAT[p].map(([id,sc,t,d])=>`<div class="feature" id="${p}-${id}"><figure class="pic" data-scene="${sc}" ${p==='facilities'&&id==='campus'?'data-photo="campus"':''} style="margin:0"></figure><div><span class="eyebrow">${LABEL[p]}</span><h3>${esc(t)}</h3><p>${d}</p></div></div>`).join('');});
+  w.innerHTML=FEAT[p].map(([id,sc,t,d])=>`<div class="feature" id="${p}-${id}"><figure class="pic" data-scene="${sc}" ${p==='facilities'&&id==='campus'?'data-photo="campus2"':''} style="margin:0"></figure><div><span class="eyebrow">${LABEL[p]}</span><h3>${esc(t)}</h3><p>${d}</p></div></div>`).join('');});
 
 /* ---------- Navigation ---------- */
 const NAV=[
