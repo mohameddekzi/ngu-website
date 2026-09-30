@@ -170,6 +170,19 @@ a.pcard:hover{transform:translateY(-3px);box-shadow:0 22px 40px -26px rgba(60,10
 .feature .pic{aspect-ratio:5/4}
 @media (max-width:860px){.feature{grid-template-columns:1fr;gap:24px}.feature:nth-child(even) .pic{order:0}}
 
+.leader{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:48px;align-items:center}
+.leader>*{min-width:0}
+.pic.portrait{aspect-ratio:4/5}
+.pic.portrait img{object-position:center top}
+.leader-body{display:grid;gap:12px;align-content:start}
+.leader-body h3{font-size:clamp(1.6rem,3vw,2.2rem)}
+.leader-body .role{color:var(--red);font-weight:500}
+.leader-body p{color:var(--muted)}
+.home-leader{display:grid;grid-template-columns:auto 1fr auto;gap:24px;align-items:center;padding:20px;border:1px solid var(--line);border-radius:var(--r);background:var(--card);margin-top:20px}
+.home-leader img{width:84px;height:84px;border-radius:50%;object-fit:cover;object-position:center top}
+.home-leader b{display:block;color:var(--heading);font-weight:600;font-size:1.05rem}
+.home-leader span{color:var(--muted);font-size:.9rem}
+@media (max-width:760px){.leader{grid-template-columns:1fr;gap:24px}.leader .pic{max-width:360px}.home-leader{grid-template-columns:auto 1fr}.home-leader .link{grid-column:1/-1}}
 /* Vision / mission */
 .vm{display:grid;grid-template-columns:1fr 1fr;gap:20px}
 .vm article{padding:40px;border-radius:var(--r);display:grid;gap:14px;align-content:start}
@@ -364,6 +377,7 @@ footer .bottom nav{display:flex;gap:18px;flex-wrap:wrap}
         <article class="v"><span class="eyebrow">Our Vision</span><h3>A Center of Excellence</h3><p>To become a Center of Excellence committed to providing a holistic learning and teaching environment that produces qualified graduates who demonstrate professional competence, a sincere spirit of tolerance, and a strong sense of responsibility and commitment to society.</p></article>
         <article class="m"><span class="eyebrow">Our Mission</span><h3>Education. Research. Service.</h3><p>Our mission is to provide quality higher education, research, and community services through superior and interdisciplinary academic programs that prepare undergraduate and graduate students with the professional knowledge, skills, and values needed to contribute meaningfully to society.</p></article>
       </div>
+      <div class="home-leader"><img data-photo-src="rector" alt="Abdiwasac Mohamed Yusuf, Rector of New Generation University"><div><b>Abdiwasac Mohamed Yusuf</b><span>Rector, New Generation University</span></div><a class="link" href="#about-leadership">Meet our leadership →</a></div>
     </div>
   </section>
 
@@ -448,10 +462,18 @@ footer .bottom nav{display:flex;gap:18px;flex-wrap:wrap}
     <div class="head"><span class="eyebrow">Core Values</span><h2>What We Stand For</h2></div>
     <div class="values" id="values-grid"></div>
   </div></section>
-  <section id="about-leadership"><div class="wrap two">
-    <div class="prose"><span class="eyebrow">University Leadership</span><h2 style="font-size:clamp(1.65rem,3.1vw,2.3rem)">Guided by People Who Believe in Education</h2><p>NGU's leadership brings together academics and professionals committed to teaching, research, student development, and service to society.</p>
-      <div class="soon"><b>Leadership profiles</b> will be published here by the University, with names, roles and messages from the leadership team.</div></div>
-    <figure class="pic" data-scene="leaders" style="margin:0"></figure>
+  <section id="about-leadership"><div class="wrap">
+    <div class="head"><span class="eyebrow">University Leadership</span><h2>Guided by People Who Believe in Education</h2><p class="lead">NGU's leadership brings together academics and professionals committed to teaching, research, student development, and service to society.</p></div>
+    <div class="leader">
+      <figure class="pic portrait" data-scene="rector" style="margin:0"></figure>
+      <div class="leader-body">
+        <span class="eyebrow">Rector</span>
+        <h3>Abdiwasac Mohamed Yusuf</h3>
+        <p class="role">Rector, New Generation University</p>
+        <p>As Rector, he leads the University's academic and institutional direction in pursuit of NGU's vision of becoming a Center of Excellence in teaching, research, and community service.</p>
+        <div class="soon"><b>Message from the Rector</b> and profiles of the wider leadership team will be published here.</div>
+      </div>
+    </div>
   </div></section>
   <section class="alt" id="about-objectives"><div class="wrap">
     <div class="head"><span class="eyebrow">Our Objectives</span><h2>New Generation University is committed to:</h2></div>
@@ -638,7 +660,7 @@ footer .bottom nav{display:flex;gap:18px;flex-wrap:wrap}
 
 <script>
 /* ---------- Real photos: put data: URIs here to replace an illustration (key = data-photo) ---------- */
-const PHOTOS = {"grads": "assets/photos/grads.jpg", "hero": "assets/photos/hero.jpg", "campus": "assets/photos/campus.jpg", "campus2": "assets/photos/campus2.jpg", "lecture": "assets/photos/lecture.jpg", "research": "assets/photos/research.jpg", "friends": "assets/photos/friends.jpg", "career": "assets/photos/career.jpg", "training": "assets/photos/training.jpg", "computers": "assets/photos/computers.jpg", "handshake": "assets/photos/handshake.jpg", "meeting": "assets/photos/meeting.jpg", "library": "assets/photos/library.jpg", "lab": "assets/photos/lab.jpg", "innovation": "assets/photos/innovation.jpg", "leaders": "assets/photos/leaders.jpg", "welcome": "assets/photos/welcome.jpg", "documents": "assets/photos/documents.jpg", "conference": "assets/photos/conference.jpg", "helpdesk": "assets/photos/helpdesk.jpg", "chat": "assets/photos/chat.jpg", "community": "assets/photos/community.jpg"};
+const PHOTOS = {"grads": "assets/photos/grads.jpg", "hero": "assets/photos/hero.jpg", "campus": "assets/photos/campus.jpg", "campus2": "assets/photos/campus2.jpg", "rector": "assets/photos/rector.jpg", "lecture": "assets/photos/lecture.jpg", "research": "assets/photos/research.jpg", "friends": "assets/photos/friends.jpg", "career": "assets/photos/career.jpg", "training": "assets/photos/training.jpg", "computers": "assets/photos/computers.jpg", "handshake": "assets/photos/handshake.jpg", "meeting": "assets/photos/meeting.jpg", "library": "assets/photos/library.jpg", "lab": "assets/photos/lab.jpg", "innovation": "assets/photos/innovation.jpg", "leaders": "assets/photos/leaders.jpg", "welcome": "assets/photos/welcome.jpg", "documents": "assets/photos/documents.jpg", "conference": "assets/photos/conference.jpg", "helpdesk": "assets/photos/helpdesk.jpg", "chat": "assets/photos/chat.jpg", "community": "assets/photos/community.jpg"};
 
 /* ---------- Illustration kit (flat, warm, people-first) ---------- */
 const V=n=>`var(--${n})`;
@@ -832,6 +854,7 @@ function route(){
 }
 window.addEventListener('hashchange',route);
 document.querySelectorAll('#cta-band [data-scene]').forEach(scene);
+document.querySelectorAll('[data-photo-src]').forEach(i=>{if(PHOTOS[i.dataset.photoSrc])i.src=PHOTOS[i.dataset.photoSrc]});
 route();
 
 /* ---------- Forms (UI only) ---------- */
