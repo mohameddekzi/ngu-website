@@ -190,6 +190,48 @@ a.pcard:hover{transform:translateY(-3px);box-shadow:0 22px 40px -26px rgba(60,10
 .home-leader b{display:block;color:var(--heading);font-weight:600;font-size:1.05rem}
 .home-leader span{color:var(--muted);font-size:.9rem}
 @media (max-width:760px){.leader{grid-template-columns:1fr;gap:24px}.leader .pic{max-width:360px}.home-leader{grid-template-columns:auto 1fr}.home-leader .link{grid-column:1/-1}}
+/* Faculties explorer: always-dark maroon stage (deliberately single-look in both themes) */
+.fx-sec{background:#4d0710;color:#f6e7d8;padding-block:96px}
+.fx{display:grid;gap:48px}
+.fx-top{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:end}
+.fx-top>*{min-width:0}
+.fx-eye{font-size:.72rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#f2d6b1}
+.fx-h{margin:14px 0 0;font-weight:700;line-height:.95;letter-spacing:-.045em;font-size:clamp(2.8rem,7vw,5.4rem);color:#fff;text-wrap:balance}
+.fx-h span{display:block;color:#f2b8a0;font-weight:300;letter-spacing:-.05em}
+.fx-lead{color:#ecd2bb;font-size:1.02rem;line-height:1.7;max-width:44ch}
+.fx-body{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:44px;align-items:stretch}
+.fx-list{list-style:none;margin:0;padding:0;border-top:1px solid rgba(242,214,177,.2)}
+.fx-list button{width:100%;display:grid;grid-template-columns:44px 1fr auto;gap:12px;align-items:center;text-align:left;background:none;border:0;border-bottom:1px solid rgba(242,214,177,.2);padding:20px 12px;color:#e3c7b3;font:500 1rem var(--font);cursor:pointer;transition:background .2s,color .2s,padding .2s}
+.fx-list i{font-style:normal;font-size:.72rem;letter-spacing:.08em;color:#c99b86;font-variant-numeric:tabular-nums}
+.fx-list small{font-size:.76rem;color:#c99b86;font-weight:400;white-space:nowrap}
+.fx-list button:hover{color:#fff;background:rgba(255,255,255,.04)}
+.fx-list button[aria-selected="true"]{background:rgba(242,214,177,.1);color:#fff;font-weight:600;padding-left:20px}
+.fx-list button[aria-selected="true"] i{color:#f2b8a0}
+.fx-list button[aria-selected="true"] small{color:#f6e7d8}
+.fx-panel{position:relative;overflow:hidden;min-height:440px;border-radius:4px;background:radial-gradient(120% 90% at 70% 25%,#3a1418 0%,#1b0a0c 55%,#120708 100%);display:flex;flex-direction:column;justify-content:space-between;padding:36px}
+.fx-panel::before{content:"";position:absolute;inset:0;background:radial-gradient(40% 35% at 62% 30%,rgba(217,60,43,.28),transparent 70%);pointer-events:none}
+.fx-net{position:relative;display:block;width:100%;flex:1 1 auto;min-height:180px;max-height:300px;margin:-12px 0 8px}
+.fx-net line{stroke:rgba(242,214,177,.32);stroke-width:1}
+.fx-net circle{transition:r .3s}
+.fx-rule{position:relative;border-top:1px solid rgba(242,214,177,.22);margin-bottom:26px}
+.fx-code{position:relative;font-size:.7rem;font-weight:600;letter-spacing:.18em;color:#f2b8a0}
+.fx-name{position:relative;margin:10px 0 14px;font-weight:700;letter-spacing:-.03em;line-height:1.02;font-size:clamp(1.9rem,4vw,3rem);color:#fff;text-wrap:balance}
+.fx-progs{position:relative;color:#ecd2bb;font-size:.95rem;line-height:1.7}
+.fx-foot{position:relative;display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-top:22px}
+.fx-count{color:#f6e7d8;font-size:.9rem}
+.fx-count b{font-size:2.2rem;font-weight:600;color:#fff;margin-right:8px;font-variant-numeric:tabular-nums}
+.fx-go{color:#f2d6b1;font-weight:500;font-size:.92rem}
+.fx-go:hover{color:#fff;text-decoration:underline;text-underline-offset:4px}
+.fx-stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(242,214,177,.22);border-bottom:1px solid rgba(242,214,177,.22)}
+.fx-stats div{padding:26px 24px;border-left:1px solid rgba(242,214,177,.22)}
+.fx-stats div:first-child{border-left:0}
+.fx-stats b{display:block;font-size:clamp(2rem,4vw,2.8rem);font-weight:600;color:#fff;line-height:1;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.fx-stats span{display:block;margin-top:10px;font-size:.8rem;color:#e3c7b3}
+.fx-anim{animation:fxin .45s ease both}
+@keyframes fxin{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.fx-sec a:focus-visible,.fx-sec button:focus-visible{outline:2px solid #f2b8a0;outline-offset:2px}
+@media (max-width:900px){.fx-top,.fx-body{grid-template-columns:1fr}.fx-panel{min-height:0;padding:26px}.fx-net{min-height:150px;max-height:190px}.fx-stats{grid-template-columns:1fr 1fr}.fx-stats div:nth-child(3){border-left:0}.fx-stats div:nth-child(n+3){border-top:1px solid rgba(242,214,177,.22)}}
+@media (max-width:480px){.fx-list button{grid-template-columns:34px 1fr;padding:16px 8px}.fx-list small{grid-column:2}}
 /* Vision / mission */
 .vm{display:grid;grid-template-columns:1fr 1fr;gap:20px}
 .vm article{padding:40px;border-radius:var(--r);display:grid;gap:14px;align-content:start}
@@ -372,13 +414,7 @@ footer .bottom nav{display:flex;gap:18px;flex-wrap:wrap}
     </div>
   </section>
 
-  <section class="alt" id="home-programs">
-    <div class="wrap">
-      <div class="head"><span class="eyebrow">Academic Programs</span><h2>Discover Your Academic Path</h2><p class="lead">New Generation University offers a diverse range of undergraduate and postgraduate programs designed to develop professional knowledge, practical skills, research capabilities, and leadership.</p></div>
-      <div class="grid g4" id="home-fac"></div>
-      <p style="margin-top:28px"><a class="link" href="#academic-faculties">View All Programs →</a></p>
-    </div>
-  </section>
+  <section class="fx-sec" id="home-programs"><div class="wrap"><div class="fx" data-fx="home"></div></div></section>
 
   <section id="home-vision">
     <div class="wrap">
@@ -520,10 +556,7 @@ footer .bottom nav{display:flex;gap:18px;flex-wrap:wrap}
       <div class="subnav"><a href="#academic-faculties">Faculties</a><a href="#academic-undergraduate">Undergraduate Programs</a><a href="#academic-masters">Master's Programs</a><a href="#academic-calendar">Academic Calendar</a><a href="#academic-resources">Academic Resources</a></div></div>
     <figure class="pic" data-scene="lecture" style="margin:0"></figure>
   </div></div>
-  <section id="academic-faculties"><div class="wrap">
-    <div class="head"><span class="eyebrow">Faculties</span><h2>Seven Faculties, One Community</h2></div>
-    <div class="grid g4" id="fac-cards"></div>
-  </div></section>
+  <section class="fx-sec" id="academic-faculties"><div class="wrap"><div class="fx" data-fx="academic"></div></div></section>
   <section class="alt" id="academic-undergraduate"><div class="wrap">
     <div class="head"><span class="eyebrow">Undergraduate Programs</span><h2>Programs by Faculty</h2></div>
     <div class="faculties" id="ug"></div>
@@ -810,8 +843,31 @@ const deg=p=>{const m=p.match(/^(MA|MSc|Master of Laws \(LLM\)) in (.*)$/);retur
 document.getElementById('ug').innerHTML=UG.map(([f,,ps])=>`<div class="fac"><h3>${esc(f)}<small>${ps.length} programs</small></h3><ul>${ps.map(p=>`<li>${esc(p)}</li>`).join('')}</ul></div>`).join('');
 document.getElementById('pg').innerHTML=PG.map(([f,ps])=>`<div class="fac"><h3>${esc(f)}<small>${ps.length} programs</small></h3><ul>${ps.map(p=>{const[n,d]=deg(p);return `<li>${esc(n)}<span class="deg">${d}</span></li>`}).join('')}</ul></div>`).join('');
 const facCard=([f,sc,ps])=>`<a class="pcard" href="#academic-undergraduate"><figure class="pic" data-scene="${sc}" style="margin:0"></figure><div class="body"><h3>${esc(f.replace('Faculty of ',''))}</h3><p>${ps.length} undergraduate program${ps.length>1?'s':''}</p></div></a>`;
-document.getElementById('fac-cards').innerHTML=UG.map(facCard).join('')+`<a class="pcard" href="#academic-masters"><figure class="pic" data-scene="grads" style="margin:0"></figure><div class="body"><h3>Graduate Studies</h3><p>15 master's programs</p></div></a>`;
-document.getElementById('home-fac').innerHTML=UG.slice(0,3).map(facCard).join('')+`<a class="pcard" href="#academic-masters"><figure class="pic" data-scene="grads" style="margin:0"></figure><div class="body"><h3>Graduate Studies</h3><p>15 master's programs</p></div></a>`;
+
+/* ---------- Faculties explorer ---------- */
+const FX_CODE=['SOC','BUS','CIT','ENG','HLT','AGR','ISL'];
+const UG_TOTAL=UG.reduce((n,f)=>n+f[2].length,0), PG_TOTAL=PG.reduce((n,f)=>n+f[1].length,0);
+function fxNet(n,seed){ // one node per program, all tied to the faculty hub
+  const W=600,H=300,cx=300+((seed*37)%80-40),cy=120+((seed*23)%30-15);let r=(seed+1)*9301;const rnd=()=>{r=(r*9301+49297)%233280;return r/233280};
+  let l='',c='';for(let i=0;i<n;i++){const a=(i/n)*Math.PI*2+rnd()*.6,d=70+rnd()*150;const x=Math.max(20,Math.min(W-20,cx+Math.cos(a)*d*1.5)),y=Math.max(20,Math.min(H-20,cy+Math.sin(a)*d*.75));
+    l+=`<line x1="${cx}" y1="${cy}" x2="${x.toFixed(1)}" y2="${y.toFixed(1)}"/>`;c+=`<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${4+rnd()*2.5}" fill="${i%2?'#f2d6b1':'#f2b8a0'}"/>`}
+  return `<svg class="fx-net" viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet" height="300" aria-hidden="true">${l}${c}<circle cx="${cx}" cy="${cy}" r="8" fill="#d93c2b"/><circle cx="${cx}" cy="${cy}" r="16" fill="none" stroke="rgba(217,60,43,.5)"/></svg>`}
+document.querySelectorAll('[data-fx]').forEach(root=>{
+  const home=root.dataset.fx==='home';
+  root.innerHTML=`<div class="fx-top"><div><span class="fx-eye">${home?'Academic Programs':'Faculties'}</span><h2 class="fx-h">Discover your<span>academic path.</span></h2></div>
+    <p class="fx-lead">Seven faculties and ${UG_TOTAL} undergraduate programs build pathways across society, business, technology, engineering, health, agriculture and Islamic studies, with ${PG_TOTAL} master's programs for advanced study.</p></div>
+    <div class="fx-body"><ul class="fx-list" role="tablist">${UG.map((f,i)=>`<li><button role="tab" aria-selected="${i===0}" data-i="${i}" id="fx-${root.dataset.fx}-${i}"><i>${String(i+1).padStart(2,'0')}</i><span>${esc(f[0].replace('Faculty of ',''))}</span><small>${f[2].length} program${f[2].length>1?'s':''}</small></button></li>`).join('')}</ul>
+    <div class="fx-panel" role="tabpanel" aria-live="polite"></div></div>
+    <div class="fx-stats"><div><b>${String(UG.length).padStart(2,'0')}</b><span>Faculties</span></div><div><b>${UG_TOTAL}</b><span>Undergraduate Programs</span></div><div><b>${PG_TOTAL}</b><span>Master's Programs</span></div><div><b>2010</b><span>Founded</span></div></div>`;
+  const panel=root.querySelector('.fx-panel');
+  function show(i){const f=UG[i];root.querySelectorAll('.fx-list button').forEach(b=>b.setAttribute('aria-selected',b.dataset.i==i));
+    panel.innerHTML=fxNet(f[2].length,i)+`<div class="fx-anim"><div class="fx-rule"></div><span class="fx-code">${FX_CODE[i]}</span><h3 class="fx-name">${esc(f[0])}</h3><p class="fx-progs">${f[2].map(esc).join(' · ')}</p>
+      <div class="fx-foot"><span class="fx-count"><b>${f[2].length}</b>undergraduate program${f[2].length>1?'s':''}</span><a class="fx-go" href="${home?'#academic-undergraduate':'#academic-undergraduate'}">View programs →</a></div></div>`}
+  root.querySelector('.fx-list').addEventListener('click',e=>{const b=e.target.closest('button');if(b)show(+b.dataset.i)});
+  root.querySelector('.fx-list').addEventListener('mouseover',e=>{const b=e.target.closest('button');if(b&&matchMedia('(hover:hover)').matches)show(+b.dataset.i)});
+  root.querySelector('.fx-list').addEventListener('keydown',e=>{const bs=[...root.querySelectorAll('.fx-list button')],k=bs.indexOf(document.activeElement);if(k<0)return;let n=k;if(e.key==='ArrowDown')n=(k+1)%bs.length;else if(e.key==='ArrowUp')n=(k-1+bs.length)%bs.length;else return;e.preventDefault();bs[n].focus();show(n)});
+  show(0);
+});
 document.getElementById('chips').innerHTML=['Social Sciences','Business & Economics','Technology','Engineering','Health Sciences','Agriculture','Environment & Climate Change','Islamic Studies & Law','Peace & Development'].map(c=>`<span>${esc(c)}</span>`).join('');
 
 const FEAT={
